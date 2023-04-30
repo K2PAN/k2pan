@@ -1,5 +1,4 @@
 package com.k2pan.api.logs;
-
 public class Logger {
     private static Logger instance = null;
 
