@@ -10,5 +10,5 @@ import com.k2pan.api.models.book.Book;
 
 @Repository
 public interface BookRepository extends JpaRepository<Book,Long> {
-
+    
 }

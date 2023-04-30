@@ -40,7 +40,7 @@ public class BookController {
 
     @PostMapping
     public Book createBook(@Validated @RequestBody Book book) {
-        return bookService.saveBook(book);
+        return bookService.createBook(book);
     }
 
     @PutMapping("/{id}")

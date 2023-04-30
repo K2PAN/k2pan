@@ -13,7 +13,7 @@ public class BookService {
     @Autowired
     private BookRepository bookRepository;
 
-    public Book saveBook(Book book) {
+    public Book createBook(Book book) {
         return bookRepository.save(book);
     }
 
@@ -36,9 +36,12 @@ public class BookService {
         book.setBookname(bookreq.getBookname());
         book.setEmail(bookreq.getEmail());
         book.setUsername(bookreq.getUsername());
-
-        final Book updateBook = bookRepository.save(book);
-        return updateBook;
+        // Book updateBook = Book.builder()
+        //     .withBookName(bookreq.getBookname())
+        //     .withUsername(bookreq.getUsername())
+        //     .withEmail(bookreq.getEmail())
+        //     .build();
+        return bookRepository.save(book);
     }
 
     public void deleteBook(long id) throws ResourceNotFoundException {
