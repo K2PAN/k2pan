@@ -1,15 +1,15 @@
 # k2pan
 
 ### Auth
-+ Register
-+ Login with Beared Token
+* Register
+* Login with Beared Token
 
 ### Doctype
-+ Create Doctype
-+ Login with Beared Token
+* Create Doctype
+* Login with Beared Token
 ### REST
-+ CRUD
+* CRUD
 
 ### Notification
-+ Email 
-+ SMS (Pending)
+* Email 
+* SMS (Pending)
