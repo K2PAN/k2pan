@@ -1,9 +1,7 @@
 package com.k2pan.api.logs;
 public class Logger {
     private static Logger instance = null;
-
     private Logger(){}
-
     public static synchronized Logger getInstance() {
         if(instance == null){
             instance = new Logger();
