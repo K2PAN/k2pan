@@ -51,6 +51,7 @@ public class SecurityConfig {
 						.requestMatchers("/order/**").permitAll()
 						.requestMatchers("/mail/**").permitAll()
 						.requestMatchers("/auth/**").permitAll()
+						.requestMatchers("/doctype/**").permitAll()
 						.anyRequest().authenticated())
 				.sessionManagement(management -> management.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 		http.addFilterBefore(jwtAuthTokenFilter, UsernamePasswordAuthenticationFilter.class);

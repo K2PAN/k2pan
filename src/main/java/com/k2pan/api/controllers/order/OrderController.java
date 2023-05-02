@@ -26,7 +26,6 @@ public class OrderController {
 
     @PostMapping(value = "/send")
     public void updateOrderStatus(@RequestBody Order order) {
-        System.out.println(order);
         orderService.updateOrderStatus(order);
     }
 
