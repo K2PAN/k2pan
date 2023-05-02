@@ -1,9 +1,15 @@
 # k2pan
-Java spring  API
 
 ### Auth
-### Doctype
++ Register
++ Login with Beared Token
 
+### Doctype
++ Create Doctype
++ Login with Beared Token
 ### REST
++ CRUD
 
 ### Notification
++ Email 
++ SMS (Pending)
