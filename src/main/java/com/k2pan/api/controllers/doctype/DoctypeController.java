@@ -4,6 +4,7 @@ import java.util.Map;
 
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +22,13 @@ public class DoctypeController {
     public void createDoctype(@RequestBody Map<String, Object> json) {
         JSONObject myJson = new JSONObject(json);
         doctypeService.createDoctype(myJson);
+    }
+
+    @DeleteMapping
+    public void removeDoctype(@RequestBody Map<String, Object> json) {
+        JSONObject myJson = new JSONObject(json);
+        doctypeService.removeDoctype(myJson);
+
     }
 
 }

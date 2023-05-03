@@ -25,5 +25,12 @@ public class Doctype {
         queryBuilder.append(");");
         jdbcTemplate.execute(queryBuilder.toString());
     }
-    
+
+    public void removeDoctype(JSONObject json) {
+        String tableName = json.getString("tablename");
+        StringBuilder queryBuilder = new StringBuilder();
+        queryBuilder.append("DROP TABLE ").append(tableName).append(";");
+        jdbcTemplate.execute(queryBuilder.toString());
+    }
+
 }

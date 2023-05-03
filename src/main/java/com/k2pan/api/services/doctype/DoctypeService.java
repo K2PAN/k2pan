@@ -19,4 +19,7 @@ public class DoctypeService {
     public void createDoctype(JSONObject json) {
         doctype.createDoctype(json);
     }
+    public void removeDoctype(JSONObject json) {
+        doctype.removeDoctype(json);
+    }
 }
