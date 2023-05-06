@@ -5,8 +5,8 @@
 * Login with Beared Token
 
 ### Doctype
-* Create Doctype
-* Login with Beared Token
+* Create,Remove Doctype
+* CRUD Record (Pending)
 ### REST
 * CRUD
 
