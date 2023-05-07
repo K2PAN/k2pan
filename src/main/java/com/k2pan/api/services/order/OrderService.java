@@ -13,7 +13,7 @@ public class OrderService {
 
     public OrderService() {
         this.orderServiceFactory = new OrderServiceFactory();
-        BookDetail bookDetail = new BookDetail.Builder()
+        BookDetail bookDetail = BookDetail.builder()
                 .setAuthor("VO DINH QUOC")
                 .setDescription("Make Vietnam great again")
                 .setLanguage("Vietnamese")

@@ -14,7 +14,7 @@ public class BookDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     @Column(nullable = false)
     private String author;
 
@@ -135,84 +135,72 @@ public class BookDetail {
     public void setTitle(String title) {
         this.title = title;
     }
+
     public void setId(Long id) {
         this.id = id;
     }
 
     public static class Builder {
-        private String author;
-        private String title;
-        private String genre;
-        private String description;
-        private String publisher;
-        private String publicationdate;
-        private String language;
-        private String format;
-        private int pages;
 
-        public Builder() {
+        private final BookDetail bookDetail;
+
+        private Builder() {
+            this.bookDetail = new BookDetail();
         }
 
         public Builder setAuthor(String author) {
-            this.author = author;
+            this.bookDetail.setAuthor(author);
             return this;
         }
 
         public Builder setTitle(String title) {
-            this.title = title;
+            this.bookDetail.setTitle(title);
             return this;
         }
 
         public Builder setGenre(String genre) {
-            this.genre = genre;
+            this.bookDetail.setGenre(genre);
             return this;
         }
 
         public Builder setDescription(String description) {
-            this.description = description;
+            this.bookDetail.setDescription(description);
             return this;
         }
 
         public Builder setPublisher(String publisher) {
-            this.publisher = publisher;
+            this.bookDetail.setPublisher(publisher);
             return this;
         }
 
         public Builder setPublicationdate(String publicationdate) {
-            this.publicationdate = publicationdate;
+            this.bookDetail.setPublicationdate(publicationdate);
             return this;
         }
 
         public Builder setLanguage(String language) {
-            this.language = language;
+            this.bookDetail.setLanguage(language);
             return this;
         }
 
         public Builder setPages(int pages) {
-            this.pages = pages;
+            this.bookDetail.setPages(pages);
             return this;
         }
 
         public Builder setFormat(String format) {
-            this.format = format;
+            this.bookDetail.setFormat(format);
             return this;
         }
 
         public BookDetail build() {
-            BookDetail bookDetail = new BookDetail();
-            bookDetail.setTitle(this.title);
-            bookDetail.setAuthor(this.author);
-            bookDetail.setDescription(this.description);
-            bookDetail.setPages(this.pages);
-            bookDetail.setGenre(this.genre);
-            bookDetail.setPublicationdate(this.publicationdate);
-            bookDetail.setPublisher(this.publisher);
-            bookDetail.setFormat(this.format);
-            bookDetail.setLanguage(this.language);
-            return bookDetail;
+            return this.bookDetail;
 
         }
+    }
 
+    public static Builder builder() {
+        return new Builder();
     }
 
 }

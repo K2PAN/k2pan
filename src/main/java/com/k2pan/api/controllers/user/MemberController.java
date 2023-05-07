@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/member")
-@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER', 'MEMBER')")
+// @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER', 'MEMBER')")
+@PreAuthorize("hasRole('MEMBER')")
 public class MemberController {
 
     @GetMapping("/")
