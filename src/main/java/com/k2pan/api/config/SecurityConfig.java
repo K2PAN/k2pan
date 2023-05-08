@@ -12,6 +12,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.resource.PathResourceResolver;
+
 import com.k2pan.api.tokens.JwtAuthTokenFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -44,10 +48,9 @@ public class SecurityConfig {
 		http
 				.csrf(csrf -> csrf.disable())
 				.authorizeHttpRequests(auth -> auth
-						// .requestMatchers("/admin/**").authenticated()
-						// .requestMatchers("/manager/**").authenticated()
-						// .requestMatchers("/member/**").authenticated()
-						// .requestMatchers("/api/**").permitAll()
+						.requestMatchers("/api/**").permitAll()
+						.requestMatchers("/greeting").permitAll()
+						.requestMatchers("/user/login").permitAll()
 						.requestMatchers("/order/**").permitAll()
 						.requestMatchers("/mail/**").permitAll()
 						.requestMatchers("/auth/**").permitAll()
@@ -57,5 +60,6 @@ public class SecurityConfig {
 		http.addFilterBefore(jwtAuthTokenFilter, UsernamePasswordAuthenticationFilter.class);
 		return http.build();
 	}
+
 
 }

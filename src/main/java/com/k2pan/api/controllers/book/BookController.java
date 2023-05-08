@@ -25,7 +25,7 @@ import com.k2pan.api.services.book.BookService;
 
 @RestController
 @RequestMapping("api/books")
-@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+// @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
 // @PostAuthorize("hasRole('ADMIN') or returnObject.owner == authentication.name")
 public class BookController {
     @Autowired

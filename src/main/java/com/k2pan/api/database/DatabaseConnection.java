@@ -6,7 +6,11 @@ import java.sql.SQLException;
 import javax.sql.DataSource;
 
 import org.apache.commons.dbcp2.BasicDataSource;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
+
+@Component
 public class DatabaseConnection {
     private static DatabaseConnection instance;
     private Connection conn;
