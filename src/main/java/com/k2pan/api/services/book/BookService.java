@@ -1,6 +1,5 @@
 package com.k2pan.api.services.book;
 
-import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +25,7 @@ public class BookService {
     public BookResponse loadAllBook() {
         List<Book> books = bookRepository.findAll();
         long count = bookRepository.count();
+
         return new BookResponse(count, books);
     }
 
@@ -37,10 +37,10 @@ public class BookService {
         book.setEmail(bookreq.getEmail());
         book.setUsername(bookreq.getUsername());
         // Book updateBook = Book.builder()
-        //     .withBookName(bookreq.getBookname())
-        //     .withUsername(bookreq.getUsername())
-        //     .withEmail(bookreq.getEmail())
-        //     .build();
+        // .withBookName(bookreq.getBookname())
+        // .withUsername(bookreq.getUsername())
+        // .withEmail(bookreq.getEmail())
+        // .build();
         return bookRepository.save(book);
     }
 

@@ -32,6 +32,6 @@ public class Order {
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
-    @OneToMany(mappedBy = "orders")
-    private List<OrderItem> orderItems;
+    // @OneToMany(mappedBy = "orders")
+    // private List<OrderItem> orderItems;
 }
