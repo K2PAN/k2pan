@@ -15,7 +15,7 @@ public class Customer {
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     @Column(name = "customer_id")
-    private Long customerId;
+    private Long id;
 
     @Column(name = "name")
     private String name;
@@ -28,4 +28,20 @@ public class Customer {
 
     @OneToMany(mappedBy = "customer")
     private List<Order> orders;
+
+    public String getAddress() {
+        return address;
+    }
+    public String getEmail() {
+        return email;
+    }
+    public Long getId() {
+        return id;
+    }
+    public String getName() {
+        return name;
+    }
+    public List<Order> getOrders() {
+        return orders;
+    }
 }

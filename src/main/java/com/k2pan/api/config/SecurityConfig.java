@@ -48,6 +48,8 @@ public class SecurityConfig {
 				.authorizeHttpRequests(auth -> auth
 						.requestMatchers("/api/**").permitAll()
 						.requestMatchers("/order/**").permitAll()
+						.requestMatchers("/category/**").permitAll()
+						.requestMatchers("/product/**").permitAll()
 						.requestMatchers("/mail/**").permitAll()
 						.requestMatchers("/auth/**").permitAll()
 						.requestMatchers("/doctype/**").permitAll()

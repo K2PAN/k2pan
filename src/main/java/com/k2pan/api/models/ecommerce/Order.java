@@ -14,13 +14,14 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.GenerationType;
+
 @Entity
 @Table(name = "orders")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_id")
-    private Long orderId;
+    private Long id;
 
     @Column(name = "order_date")
     private LocalDate orderDate;
@@ -32,6 +33,47 @@ public class Order {
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
-    // @OneToMany(mappedBy = "orders")
-    // private List<OrderItem> orderItems;
+    @OneToMany(mappedBy = "order")
+    private List<OrderItem> orderItems;
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public LocalDate getOrderDate() {
+        return orderDate;
+    }
+
+    public List<OrderItem> getOrderItems() {
+        return orderItems;
+    }
+
+    public BigDecimal getTotalAmount() {
+        return totalAmount;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setOrderDate(LocalDate orderDate) {
+        this.orderDate = orderDate;
+    }
+
+    public void setOrderItems(List<OrderItem> orderItems) {
+        this.orderItems = orderItems;
+    }
+
+    public void setTotalAmount(BigDecimal totalAmount) {
+        this.totalAmount = totalAmount;
+    }
+
 }
