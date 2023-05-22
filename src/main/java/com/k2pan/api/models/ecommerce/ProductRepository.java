@@ -13,5 +13,4 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     @Query("SELECT u FROM Product u WHERE u.price >= ?1")
     List<Product> findProductWithPrice(int price);
 
-    
 }

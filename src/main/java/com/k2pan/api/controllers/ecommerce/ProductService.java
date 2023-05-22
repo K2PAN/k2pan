@@ -20,7 +20,7 @@ public class ProductService {
     private CategoryRepository categoryRepository;
 
     public List<Product> getProducts() {
-        return productRepository.findProductWithPrice(10);
+        return productRepository.findAll();
     }
 
     public Product createProduct(Product product) {
