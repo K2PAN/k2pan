@@ -6,6 +6,9 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PostAuthorize;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +25,8 @@ import com.k2pan.api.services.book.BookService;
 
 @RestController
 @RequestMapping("api/books")
+// @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+// @PostAuthorize("hasRole('ADMIN') or returnObject.owner == authentication.name")
 public class BookController {
     @Autowired
     private BookService bookService;
